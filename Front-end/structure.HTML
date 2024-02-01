@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raudi - Personnalisez votre voiture</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajoutez ici vos styles CSS */
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: auto; }
+        .model { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+        .model:hover { background-color: #f4f4f4; cursor: pointer; }
+        header, .model-list, footer { padding: 20px; }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue chez Raudi</h1>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="model-thumbnail">
+                <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="/" class="navbar-link">Accueil</a></li>
+                    <li class="navbar-item"><a href="/models" class="navbar-link">Modèles</a></li>
+                    <li class="navbar-item"><a href="/customize" class="navbar-link">Personnalisation</a></li>
+                    <li class="navbar-item"><a href="/contact" class="navbar-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    </header>
+    
+    <div class="container">
+        <section class="model-list">
+            <article class="model" id="raudiR1">
+                <img src="C:\Users\ps3ka\Pictures\Raudi R1.png" alt="Raudi R1" class="model-thumbnail">
+                <h2>Raudi R1</h2>
+                <p>Le modèle R1 est une voiture compacte idéale pour la ville. 3 portes, moteur diesel.</p>
+                <button  class="personnaliser-btn" onclick="selectModel('Raudi R1')">Personnaliser</button>
+            </article>
+            
+            <article class="model" id="raudiR2">
+                <h2>Raudi R2</h2>
+                <img src="C:\Users\ps3ka\Downloads\Raudi R2.png" alt="Raudi R2" class="model-thumbnail">
+                <p>Le modèle R2 est parfait pour les familles. 5 portes, moteur essence.</p>
+                <button  class="personnaliser-btn" onclick="selectModel('Raudi R2')">Personnaliser</button>
+            </article>
+            
+            <article class="model" id="raudiFamille">
+                <h2>Raudi Famille</h2>
+                <img src="C:\Users\ps3ka\Pictures\Raudi Famille.png" alt="Raudi Famille" class="model-thumbnail">
+                <p>Le modèle Famille offre de l'espace et du confort pour toute la famille.</p>
+                <button  class="personnaliser-btn" onclick="selectModel('Raudi Famille')">Personnaliser</button>
+            </article>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Raudi. Tous droits réservés.</p>
+    </footer>
+    
+    <script>
+        // Ajoutez ici le script pour la gestion des clics sur les boutons
+        function selectModel(modelName) {
+            console.log("Personnalisation du modèle :", modelName);
+            // Ici, vous pourriez rediriger l'utilisateur vers la page de personnalisation
+            // ou ouvrir une modal pour la personnalisation
+        }
+    </script>
+</body>
+</html>
