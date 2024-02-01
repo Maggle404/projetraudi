@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Raudi</title>
+    <link rel="stylesheet" href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Styles.css">
+
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; }
+        .login-container { width: 300px; margin: 100px auto; padding: 20px; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        input[type="text"], input[type="password"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 10px; border: none; border-radius: 5px; background-color: #007bff; color: white; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue chez Raudi</h1>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="logo">
+                <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
+                    <li class="navbar-item"><a href="/models" class="navbar-link">Modèles</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    </header>
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form action="/login" method="post">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+</body>
+</html>

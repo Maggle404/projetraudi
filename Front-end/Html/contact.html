@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+    <link rel="stylesheet" href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue chez Raudi</h1>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="logo">
+                <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\TemplateModele.html" class="navbar-link">Modèles</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    </header>
+    <h2>Contactez-nous</h2>
+    <form action="/envoyer-message" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
+</html>

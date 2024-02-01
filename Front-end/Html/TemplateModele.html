@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèles de Voitures - Raudi</title>
+    <link rel="stylesheet" href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Styles.css">
+
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; }
+        .container { width: 80%; margin: auto; }
+        .model { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; background: #fff; }
+        .model img { width: 100%; height: auto; border-radius: 5px; }
+        .model h3 { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue chez Raudi</h1>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="logo">
+                <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\TemplateModele.html" class="navbar-link">Modèles</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
+                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    </header>
+    <div class="container">
+        <!-- Exemple de modèle de voiture -->
+        <div class="model">
+            <img src="C:\Users\ps3ka\Downloads\Raudi model r1.webp" alt="Raudi R1">
+            <h3>Raudi R1</h3>
+            <p>Description du modèle Raudi R1...</p>
+            <button  class="personnaliser-btn" onclick="selectModel('Raudi R1')">Personnaliser</button>
+
+        </div>
+
+        <!-- Répétez les divs .model pour chaque modèle de voiture -->
+    </div>
+</body>
+</html>
