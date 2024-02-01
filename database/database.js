@@ -5,4 +5,14 @@ const sequelize = new Sequelize("raudi" ,"root" ,"" ,{
     dialect: "mysql"
 } )
 
+
+// test connection
+sequelize.authenticate().then(()=>{
+    console.log("login success");
+}).catch((error)=>{
+    console.log(error);
+})
+
+
+
 module.exports = sequelize
