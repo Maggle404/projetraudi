@@ -15,7 +15,7 @@ exports.checkAdmin = (req, res, next) => {
 }
 
 // read
-exports.displayCars = async (req, res) => {
+exports.getCars = async (req, res) => {
     try {
         const cars = await db.Car.findAll();
         res.status(200).json(cars);
