@@ -1,11 +1,12 @@
-const pool = require('../database/database.js')
+const User = require("../model/userModel.js")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require("dotenv").config()
 
+
 // MIDDLEWARES
 
-const checkAdmin = (req, res, next) => {
+exports.checkAdmin = (req, res, next) => {
     if (req.user && req.user.role === 'admin') {
         next();
     } else {
@@ -13,64 +14,63 @@ const checkAdmin = (req, res, next) => {
     }
 }
 
-module.exports = checkAdmin;
-
 // FONCTIONS
 
-exports.getUser = async(req, res)=>{
-    conn = await pool.GetConnection();
-    const rows = await conn.query("SELECT * from raudi");
-    conn.release();
-    res.status(200).json(rows);
-}
-
-exports.createUser = async(req, res)=>{
-    const { name, password, role } = req.body;
-    const conn = await pool.getConnection();
-
-    const result = await conn.query('SELECT * from raudi where name = ?', [name])
-    console.log(result);
-    if(result[0].length > 0){
-        return res.status(400).json("nom deja utilisé ")
+//raed
+exports.getUser = async (req, res) => {
+    try {
+        const users = await User.findAll();
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("erreur:", error);
+        res.status(500).json({ message: 'erreur serveur' });
     }
-    conn.release()
-
-    //hash du password
-    const hashPassword = await bcrypt.hash(password, 10)
-    await conn.query('insert into raudi (name, password, role) values (?,?,?)', [name, hashPassword, role])
-    conn.release()
-
-    const token = jwt.sign({email},  process.env.APIKEY, {expiresIn: '1H'})
-    res.json(token)
 }
 
-exports.editUser = async(req, res)=>{
+// create
+exports.createUser = async (req, res) => {
+    const { name, password, role } = req.body;
+    try {
+        const existingUser = await User.findOne({ where: { name } });
+        if (existingUser) {
+            return res.status(400).json("nom deja utilisé ");
+        }
+        // Hash do mdp
+        const hashPassword = await bcrypt.hash(password, 10);
+        await User.create({ name, password: hashPassword, role });
+        const token = jwt.sign({ email }, process.env.APIKEY, { expiresIn: '1H' });
+        res.json(token);
+    } catch (error) {
+        console.error("erreur", error);
+        res.status(500).json({ message: 'erreur serveur' });
+    }
+}
+
+//edit
+exports.editUser = async (req, res) => {
     const id = req.params.id;
     const { name, password, role } = req.body;
     try {
-        const conn = await pool.getConnection();
-        const [results] = await conn.query('UPDATE raudi SET name = ?, password = ?, role = ? WHERE id = ?', [name, password, role]);
-        conn.release();
+        await User.update({ name, password, role }, { where: { id } });
         res.json({ id, name, role });
     } catch (error) {
-        console.error("Error editing user:", error);
-        res.status(500).json({ message: 'Internal Server Error' });
+        console.error("erreur", error);
+        res.status(500).json({ message: 'erreur serveur' });
     }
 }
 
-exports.deleteUser = async(req, res)=>{
+// delete
+exports.deleteUser = async (req, res) => {
     const id = req.params.id;
     try {
-        const conn = await pool.getConnection();
-        const [results] = await conn.query('DELETE FROM raudi WHERE id = ?', [id]);
-        conn.release();
-        if (results.affectedRows > 0) {
-            res.json({ message: 'Utilisateur supprimé avec succès' });
+        const deletedUserCount = await User.destroy({ where: { id } });
+        if (deletedUserCount > 0) {
+            res.json({ message: 'Utilisateur supprimé' });
         } else {
             res.status(404).json({ message: 'Utilisateur introuvable' });
         }
     } catch (error) {
-        console.error("Error deleting user:", error);
-        res.status(500).json({ message: 'Internal Server Error' });
+        console.error("erreur", error);
+        res.status(500).json({ message: 'erreur serveur' });
     }
 }
