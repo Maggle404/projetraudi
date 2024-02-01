@@ -10,7 +10,7 @@ sequelize.authenticate().then(()=>{
 
 
 const Car = sequelize.define("car", {
-    ID:{
+    id:{
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true

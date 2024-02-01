@@ -3,7 +3,7 @@ const sequelize = require("../database/database")
 
 
 const options = sequelize.define("options", {
-    ID:{
+    id:{
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true
