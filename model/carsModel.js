@@ -2,7 +2,14 @@ const DataTypes = require("sequelize")
 const sequelize = require("../database/database")
 const options = require("./optionsModel")
 
-const car = sequelize.define("car", {
+sequelize.authenticate().then(()=>{
+    console.log("login success");
+}).catch((error)=>{
+    console.log(error);
+})
+
+
+const Car = sequelize.define("car", {
     ID:{
         type: DataTypes.INTEGER, 
         primaryKey: true,
@@ -27,10 +34,11 @@ const car = sequelize.define("car", {
     freezeTableName: true
 })
 
-car.belongsToMany(options, {through: "cars_models"})
-options.belongsToMany(car, {through: "Product_ype"})
+Car.belongsToMany(options, {through: "car_options"})
+options.belongsToMany(Car, {through: "car_options"})
 
 
-car.sync({alter:true});
-
-module.exports = car
+const reload = async()=>{
+    Car.sync({alter: true})
+}
+reload()

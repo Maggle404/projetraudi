@@ -1,5 +1,4 @@
 const pool = require('../database/database.js')
-const pool = require('../model/userModel.js')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require("dotenv").config()
@@ -18,14 +17,14 @@ module.exports = checkAdmin;
 
 // FONCTIONS
 
-exports.getUtilisateurs = async(res, req)=>{
+exports.getUser = async(res, req)=>{
     conn = await pool.GetConnection();
     const rows = await conn.query("SELECT * from utilisateur");
     conn.release();
     res.status(200).json(rows);
 }
 
-exports.create = async(req, res)=>{
+exports.createUser = async(req, res)=>{
     const { nom, prenom, email, password, role } = req.body;
     const conn = await pool.getConnection();
 
@@ -45,7 +44,7 @@ exports.create = async(req, res)=>{
     res.json(token)
 }
 
-exports.edit = async(req, res)=>{
+exports.editUser = async(req, res)=>{
     const id = req.params.id;
     const { nom, prenom, email, password, role } = req.body;
     try {
@@ -59,7 +58,7 @@ exports.edit = async(req, res)=>{
     }
 }
 
-exports.delete = async(req, res)=>{
+exports.deleteUser = async(req, res)=>{
     const id = req.params.id;
     try {
         const conn = await pool.getConnection();

@@ -20,8 +20,6 @@ const options = sequelize.define("options", {
     freezeTableName: true
 })
 
-cars.belongsToMany(options, {through: "cars_models"})
-options.belongsToMany(cars, {through: "Product_ype"})
 
 
 options.sync({alter:true});
