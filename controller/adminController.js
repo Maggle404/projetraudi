@@ -7,6 +7,41 @@ require("dotenv").config()
 //---------------------------
 
 // MIDDLEWARES
+
+exports.login = async(req, res)=>{
+
+    const {name}=req.body
+    const conn = await pool.GetConnection()
+
+    const result = await conn.query('SELECT * from raudi where name = ?', [name])
+    if(result.length === 0){
+        return res.Status(400).json("User does not exist")
+    }
+
+    const token = jwt.sign({email},  process.env.APIKEY, {expiresIn: '1H'})
+    res.json(token)
+}
+
+exports.auth = async(req, res, next)=>{
+    console.log(req.body.token);
+    const token = req.body.token ? req.body.token : req.headers.authorisation
+    if(token){
+        let decoded = jwt.verify(token, process.env.APIKEY)
+        console.log(decoded);
+        if (decoded){
+            next()
+        }
+        else{
+            return res.status(401).json("unauthorised")
+        }
+    }
+    else{
+        return res.status(401).json("unauthorised")
+    }
+}
+
+
+
 exports.checkAdmin = (req, res, next) => {
     if (req.user && req.user.role === 'admin') {
         next();
