@@ -4,3 +4,4 @@ vue catalogue
 
 token auth pour les clients connectés
 comptabilité avec les informations de ventes passées
+import bases de données tableaux croisés sur carsController.js (relations cars <-> options) et rendu des options sur la page

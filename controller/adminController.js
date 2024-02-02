@@ -1,11 +1,12 @@
 const Car = require("../model/carsModel.js")
-const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require("dotenv").config()
 
+//---------------------------
+//
+//---------------------------
 
 // MIDDLEWARES
-
 exports.checkAdmin = (req, res, next) => {
     if (req.user && req.user.role === 'admin') {
         next();
