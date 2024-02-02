@@ -1,4 +1,6 @@
 const Car = require("../model/carsModel")
+const options = require("../model/optionsModel")
+
 const sequelize = require("../database/database")
 
 //---------------------------
@@ -11,3 +13,4 @@ exports.getCars = async(req, res)=>{
     let result = await Car.findAll()
     res.status(200).json(result)
 }
+

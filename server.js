@@ -4,14 +4,13 @@ const carsRoute = require('./route/carsRoute')
 const userRoute = require('./route/userRoute')
 
 
+
 //middleware
 app.use (express.json())
 
 // API Routes:
 app.use('/cars', carsRoute)
 app.use('/admin', userRoute)
-
-
 
 
 //server
