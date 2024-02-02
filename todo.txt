@@ -1,0 +1,6 @@
+CRUD voitures
+CRUD utilisateurs
+vue catalogue
+
+token auth pour les clients connectés
+comptabilité avec les informations de ventes passées

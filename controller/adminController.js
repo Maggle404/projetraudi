@@ -1,4 +1,4 @@
-const pool = require('../database/database.js')
+const Car = require("../model/carsModel.js")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require("dotenv").config()
@@ -17,7 +17,7 @@ exports.checkAdmin = (req, res, next) => {
 // read
 exports.getCars = async (req, res) => {
     try {
-        const cars = await db.Car.findAll();
+        const cars = await Car.findAll();
         res.status(200).json(cars);
     } catch (error) {
         console.error(error);
@@ -29,7 +29,7 @@ exports.getCars = async (req, res) => {
 exports.createCar = async (req, res) => {
     try {
         const { name, motor, seats, price } = req.body;
-        const newCar = await db.Car.create({ name, motor, seats, price });
+        const newCar = await Car.create({ name, motor, seats, price });
         res.status(201).json(newCar);
     } catch (error) {
         console.error(error);
@@ -42,7 +42,7 @@ exports.updateCar = async (req, res) => {
     try {
         const { id } = req.params;
         const { name, motor, seats, price } = req.body;
-        const updatedCar = await db.Car.update({ name, motor, seats, price }, { where: { id } });
+        const updatedCar = await Car.update({ name, motor, seats, price }, { where: { id } });
         res.status(200).json(updatedCar);
     } catch (error) {
         console.error(error);
@@ -54,7 +54,7 @@ exports.updateCar = async (req, res) => {
 exports.deleteCar = async (req, res) => {
     try {
         const { id } = req.params;
-        await db.Car.destroy({ where: { id } });
+        await Car.destroy({ where: { id } });
         res.status(204).end();
     } catch (error) {
         console.error(error);
