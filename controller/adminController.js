@@ -18,7 +18,7 @@ exports.login = async(req, res)=>{
         return res.Status(400).json("User does not exist")
     }
 
-    const token = jwt.sign({email},  process.env.APIKEY, {expiresIn: '1H'})
+    const token = jwt.sign({name},  process.env.APIKEY, {expiresIn: '1H'})
     res.json(token)
 }
 
