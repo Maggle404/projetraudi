@@ -16,7 +16,7 @@ exports.checkAdmin = (req, res, next) => {
 
 // FONCTIONS
 
-//raed
+//read
 exports.getUser = async (req, res) => {
     try {
         const users = await User.findAll();
@@ -38,8 +38,7 @@ exports.createUser = async (req, res) => {
         // Hash do mdp
         const hashPassword = await bcrypt.hash(password, 10);
         await User.create({ name, password: hashPassword, role });
-        const token = jwt.sign({ email }, process.env.APIKEY, { expiresIn: '1H' });
-        res.json(token);
+
     } catch (error) {
         console.error("erreur", error);
         res.status(500).json({ message: 'erreur serveur' });
@@ -52,7 +51,7 @@ exports.editUser = async (req, res) => {
     const { name, password, role } = req.body;
     try {
         await User.update({ name, password, role }, { where: { id } });
-        res.json({ id, name, role });
+        res.json({ id, name, password, role });
     } catch (error) {
         console.error("erreur", error);
         res.status(500).json({ message: 'erreur serveur' });

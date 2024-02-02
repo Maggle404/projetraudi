@@ -10,12 +10,18 @@ require("dotenv").config()
 
 exports.login = async(req, res)=>{
 
-    const {name}=req.body
+    const {name, password}=req.body
     const conn = await pool.GetConnection()
 
     const result = await conn.query('SELECT * from raudi where name = ?', [name])
     if(result.length === 0){
-        return res.Status(400).json("User does not exist")
+        return res.Status(400).json("User unknown")
+    }
+    
+    const passwordTrue = await bcrypt.compare(password, result[0].password)
+    console.log(passwordTrue);
+    if(!passwordTrue){
+        return res.status(400).json("INVALID PASSWRD")
     }
 
     const token = jwt.sign({name},  process.env.APIKEY, {expiresIn: '1H'})

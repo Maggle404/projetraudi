@@ -4,7 +4,12 @@ vue catalogue✔️
 
 
 
+Front-end: panneau admin pour CRUD 
+
+Front-end: Login/Register
 
 token auth pour les clients connectés
 comptabilité avec les informations de ventes passées
 import bases de données tableaux croisés sur carsController.js (relations cars <-> options) et rendu des options sur la page
+
+Gérer le .env pour que ca marche, quoi... et le mettre dans le gitignore
