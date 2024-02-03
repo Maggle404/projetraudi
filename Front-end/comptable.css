@@ -61,3 +61,194 @@ section h2 {
     font-size: 1.5rem;
     color: #333;
 }
+header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+/* Styles CSS pour la navbar */
+.navbar {
+    background: #333;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 1100px;
+}
+
+/* Style pour le logo */
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar-logo {
+    color: #fff;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    height: 80px;
+    position: relative; /* Ajoutez cette ligne pour la position relative */
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-link:hover {
+    background-color: #555;
+    transition: all 0.3s ease;
+}
+
+/* Styles pour le sous-menu (dropdown) */
+.dropdown {
+    height: 80px;
+    position: relative;
+}
+
+/* Style pour le bouton du sous-menu */
+.dropdown .dropbtn {
+    height: 80px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Style pour les éléments du sous-menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #101a2400;
+    height: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0; /* Alignez le sous-menu à gauche */
+    top: 100%; /* Placez le sous-menu en dessous de l'élément parent */
+}
+
+/* Style pour les éléments du sous-menu au survol */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+
+.dropdown-content :hover {
+    background-color: #0056b3;
+}
+/* Style pour les éléments du sous-menu au survol */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: rgba(0, 0, 0, 0);
+}
+
+/* Afficher le sous-menu au survol */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: white; /* Arrière-plan pour la zone de contenu principale */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.model {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff; /* Arrière-plan pour chaque modèle de voiture */
+}
+
+.header-content h1 {
+    font-size: 28px; /* Taille de la police */
+    margin: 0; /* Supprime la marge par défaut du titre */
+}
+
+/* S/* Style général des boutons */
+button {
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Remplissage autour du texte */
+    border: none; /* Aucune bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: bold; /* Poids du texte */
+    transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
+}
+
+/* Effet au survol des boutons */
+button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+
+/* Boutons désactivés */
+button:disabled {
+    background-color: #cccccc; /* Couleur de fond pour les boutons désactivés */
+    cursor: not-allowed; /* Curseur indiquant qu'une action est interdite */
+}
+
+/* Style spécifique pour les boutons de personnalisation */
+button.personnaliser-btn {
+    background-color: #28a745; /* Vert pour les actions de personnalisation */
+}
+
+button.personnaliser-btn:hover {
+    background-color: #218838; /* Un vert plus foncé au survol */
+}
+/*tyles CSS */
+/* ... autres styles ... */
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }}
