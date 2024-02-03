@@ -333,7 +333,6 @@ footer {
     transition: background-color 0.3s ease-in-out;
   }
   
-  .btnlistmodelR1:hover {
+.btnlistmodelR1:hover {
     background-color: #2980b9; /* Couleur de fond au survol */
-  }
-  
+}
