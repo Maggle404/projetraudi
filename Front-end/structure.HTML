@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raudi - Personnalisez votre voiture</title>
     <link rel="stylesheet" href="styles.css">
+    <script>function openPopup(modelId) {
+        const popup = document.getElementById(`popupR1`);
+        popup.style.display = 'block';
+    }
+    
+    function closePopup(modelId) {
+        const popup = document.getElementById(`popupR1`);
+        popup.style.display = 'none';
+    }
+    </script>
     <style>
         /* Ajoutez ici vos styles CSS */
         body { font-family: Arial, sans-serif; }
@@ -45,25 +55,91 @@
     <div class="container">
         <section class="model-list">
             <article class="model" id="raudiR1">
-                <img src="C:\Users\ps3ka\Pictures\Raudi R1.png" alt="Raudi R1" class="model-thumbnail">
-                <h2>Raudi R1</h2>
-                <p>Le modèle R1 est une voiture compacte idéale pour la ville. 3 portes, moteur diesel.</p>
-                <button  class="personnaliser-btn" onclick="selectModel('Raudi R1')">Personnaliser</button>
+                <a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\TemplateModele.html">
+                    <img src="C:\Users\ps3ka\Pictures\Raudi R1.png" alt="Raudi R1" class="model-thumbnail">
+                    <h2>Raudi R1</h2>
+                    <p>Le modèle R1 est une voiture compacte idéale pour la ville. 3 portes, moteur diesel.</p>
+                </a>
+                <div>
+                    <button class="personnaliser-btn" onclick="openPopup('Raudi R1')">Voir les Détails</button>
+                </div>
+                <div class="popup" id="popupR1">
+                    <div class="popup-content">
+                        <h2>Modèle Raudi R1</h2>
+                        <ul>
+                            <li><strong>Type de voiture:</strong> Compacte</li>
+                            <li><strong>Nombre de portes:</strong> 3</li>
+                            <li><strong>Moteur:</strong> Diesel</li>
+                            <li><strong>Transmission:</strong> Manuelle</li>
+                            <li><strong>Puissance moteur:</strong> 120 chevaux</li>
+                            <li><strong>Consommation:</strong> 5.5 L/100km en ville, 4.0 L/100km sur autoroute</li>
+                            <li><strong>Climatisation:</strong> Oui</li>
+                            <li><strong>Sièges:</strong> 5</li>
+                            <li><strong>Options disponibles:</strong> Climatisation, Système audio premium, Sièges chauffants</li>
+                        </ul>
+                        <button class="close-popup-btn" onclick="closePopup('raudiR1')">Fermer</button>
+                    </div>
+                </div>
             </article>
+            
             
             <article class="model" id="raudiR2">
-                <h2>Raudi R2</h2>
-                <img src="C:\Users\ps3ka\Downloads\Raudi R2.png" alt="Raudi R2" class="model-thumbnail">
-                <p>Le modèle R2 est parfait pour les familles. 5 portes, moteur essence.</p>
-                <button  class="personnaliser-btn" onclick="selectModel('Raudi R2')">Personnaliser</button>
+                <a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\TemplateModele.html">
+                    <img src="C:\Users\ps3ka\Pictures\Raudi R1.png" alt="Raudi R2" class="model-thumbnail">
+                    <h2>Raudi R2</h2>
+                    <p>Le modèle R2 est une voiture compacte idéale pour la ville. 3 portes, moteur Essence.</p>
+                </a>
+                <div>
+                    <button class="personnaliser-btn" onclick="openPopup('Raudi R2')">Voir les Détails</button>
+                </div>
+                <div class="popup" id="popupR2">
+                    <div class="popup-content">
+                        <h2>Modèle Raudi R2</h2>
+                        <ul>
+                            <li><strong>Type de voiture:</strong> Compacte</li>
+                            <li><strong>Nombre de portes:</strong> 5</li>
+                            <li><strong>Moteur:</strong> Essence</li>
+                            <li><strong>Transmission:</strong> Manuelle</li>
+                            <li><strong>Puissance moteur:</strong> 120 chevaux</li>
+                            <li><strong>Consommation:</strong> 7.5 L/100km en ville, 6.0 L/100km sur autoroute</li>
+                            <li><strong>Climatisation:</strong> Oui</li>
+                            <li><strong>Sièges:</strong> 5</li>
+                            <li><strong>Options disponibles:</strong> Climatisation, Système audio premium, Sièges chauffants</li>
+                        </ul>
+                        <button class="close-popup-btn" onclick="closePopup('raudiR2')">Fermer</button>
+                    </div>
+                </div>
             </article>
             
+            
             <article class="model" id="raudiFamille">
-                <h2>Raudi Famille</h2>
-                <img src="C:\Users\ps3ka\Pictures\Raudi Famille.png" alt="Raudi Famille" class="model-thumbnail">
-                <p>Le modèle Famille offre de l'espace et du confort pour toute la famille.</p>
-                <button  class="personnaliser-btn" onclick="selectModel('Raudi Famille')">Personnaliser</button>
+                <a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\TemplateModele.html">
+                    <img src="C:\Users\ps3ka\Pictures\Raudi R1.png" alt="Raudi Famille" class="model-thumbnail">
+                    <h2>Raudi Famille</h2>
+                    <p>Le modèle Famille est une voiture compacte idéale pour la ville. 5 portes, moteur diesel.</p>
+                </a>
+                <div>
+                    <button class="personnaliser-btn" onclick="openPopup('Raudi Famille')">Voir les Détails</button>
+                </div>
+                <div class="popup" id="popupFamille">
+                    <div class="popup-content">
+                        <h2>Modèle Raudi Famille</h2>
+                        <ul>
+                            <li><strong>Type de voiture:</strong> Compacte</li>
+                            <li><strong>Nombre de portes:</strong> 5</li>
+                            <li><strong>Moteur:</strong> Diesel</li>
+                            <li><strong>Transmission:</strong> Manuelle</li>
+                            <li><strong>Puissance moteur:</strong> 120 chevaux</li>
+                            <li><strong>Consommation:</strong> 5.5 L/100km en ville, 4.0 L/100km sur autoroute</li>
+                            <li><strong>Climatisation:</strong> Oui</li>
+                            <li><strong>Sièges:</strong> 5</li>
+                            <li><strong>Options disponibles:</strong> Climatisation, Système audio premium, Sièges chauffants</li>
+                        </ul>
+                        <button class="close-popup-btn" onclick="closePopup('raudiFamille')">Fermer</button>
+                    </div>
+                </div>
             </article>
+            
         </section>
     </div>
     
