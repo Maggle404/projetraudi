@@ -1,0 +1,40 @@
+<!-- comptables.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Comptables</title>
+    <link rel="stylesheet" href="comptable.css">
+</head>
+<body>
+    <h1>Espace Comptables</h1>
+
+    <!-- Historique des achats -->
+    <h2>Historique des Achats</h2>
+    <ul>
+        <% historiqueAchats.forEach((achat) => { %>
+            <li><%= achat.date %> - <%= achat.montant %> €</li>
+        <% }); %>
+    </ul>
+
+    <!-- Compte rendu du gain total par mois -->
+    <h2>Compte Rendu du Gain Total par Mois</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mois</th>
+                <th>Gain Total (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% gainTotalParMois.forEach((mois) => { %>
+                <tr>
+                    <td><%= mois.mois %></td>
+                    <td><%= mois.gain %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
