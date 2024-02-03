@@ -7,11 +7,11 @@ const checkAdmin = require("../controller/userController.js")
 
 
 //read
-Route.get('/listUser', checkAdmin.checkAdmin, userController.getUser)
+Route.get('/listUser', userController.getUser)
 //Create, update, delete
-Route.post('/createUser', checkAdmin.checkAdmin, userController.createUser)
-Route.put('/editUser/:id', checkAdmin.checkAdmin, userController.editUser)
-Route.delete('/deleteUser/:id', checkAdmin.checkAdmin, userController.deleteUser)
+Route.post('/createUser',  userController.createUser)
+Route.put('/editUser/:id', userController.checkAdmin, userController.editUser)
+Route.delete('/deleteUser/:id', userController.checkAdmin, userController.deleteUser)
 
 
 Route.get('/admin', carsController.getCars)

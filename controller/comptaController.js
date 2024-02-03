@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 require("dotenv").config()
 
 //---------------------------
-//
+// DISPLAY L'HISTORIQUE DE VENTE ICI (besoin d'aide de nathan)
 //---------------------------
 
 exports.checkCompta = (req, res, next) => {
