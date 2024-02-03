@@ -270,6 +270,7 @@ footer {
     background-color: #555;
     color: #fff;
 }
+
 /* Style uniquement pour le lien <a> dans l'article avec l'ID "raudiR1" */
 #raudiR1 a {
     /* Vos styles CSS spécifiques ici */
@@ -285,6 +286,7 @@ footer {
     color: #0056b3; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
 }
+
  .listmodelR1 a {/* Vos styles CSS spécifiques ici */
  text-decoration: none; /* Supprime la décoration du lien (soulignement par défaut) */
  color: #f0f0f0; /* Couleur du texte au repos */
@@ -292,6 +294,7 @@ footer {
 
  /* Ajoutez d'autres styles personnalisés si nécessaire */
 }
+
 .listemodelR1 a:hover {
     color: #ffffff; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
@@ -304,6 +307,7 @@ footer {
    
     /* Ajoutez d'autres styles personnalisés si nécessaire */
    }
+
    .listemodelR2 a:hover {
     color: #0056b3; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
@@ -316,10 +320,12 @@ footer {
    
     /* Ajoutez d'autres styles personnalisés si nécessaire */
    }
+
    .listemodelFamille a:hover {
     color: #0056b3; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
 }
+
 .btnlistmodelR1 {
     display: inline-block;
     padding: 10px 20px;
