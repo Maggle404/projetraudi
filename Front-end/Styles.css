@@ -84,11 +84,13 @@ header {
 
 /* Styles pour le sous-menu (dropdown) */
 .dropdown {
+    height: 80px;
     position: relative;
 }
 
 /* Style pour le bouton du sous-menu */
 .dropdown .dropbtn {
+    height: 80px;
     font-size: 16px;
     border: none;
     outline: none;
@@ -103,7 +105,7 @@ header {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    height: 80px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     left: 0; /* Alignez le sous-menu à gauche */
