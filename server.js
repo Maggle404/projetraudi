@@ -1,41 +1,27 @@
-const express = require("express")
-const path = require("path"); // Importez le module 'path'
-const app = express()
-const carsRoute = require('./route/carsRoute')
-const userRoute = require('./route/userRoute')
+const express = require("express");
+const path = require("path");
+const app = express();
 
-const user = require("./route/userRoute.js")
-const inscription = require("./route/inscriptionRoute.js"); //Route pour l'inscription
-app.use (express.json())
+const carsRoute = require('./route/carsRoute');
+const userRoute = require('./route/userRoute');
+const inscriptionRoute = require('./route/inscriptionRoute');
+
+// Middleware pour traiter les données JSON
+app.use(express.json());
+
 // Configuration EJS comme moteur de modèle
 app.set('view engine', 'ejs');
 
 // Définissez le répertoire où se trouvent vos fichiers de modèles EJS
 app.set('views', path.join(__dirname, 'views'));
 
+// API Routes
+app.use('/cars', carsRoute);
+app.use('/user', userRoute);
+app.use('/inscription', inscriptionRoute);
 
-// API Routes:
-app.use('/user', user)
-// Utilisez la route d'inscription
-app.use('/inscription', inscription);
-//server
-app.listen(8000, ()=>{
-    console.log("server open on 8000")
-})
-
-const express = require('express');
-const app = express();
-const port = 8000; // Vous pouvez choisir le port de votre choix
-
-// Middleware pour servir des fichiers statiques (CSS, images, etc.)
-app.use(express.static('public'));
-
-// Définition de la route pour servir la page HTML
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'C:\Users\ps3ka\Desktop\projetraudi\Front-end\Comptable.html');
-});
-
-// Écoute du serveur sur le port spécifié
+// Serveur Express
+const port = 8000;
 app.listen(port, () => {
-    console.log(`Le serveur est en cours d'exécution sur le port 8000`);
+    console.log(`Le serveur est en cours d'exécution sur le port ${port}`);
 });
