@@ -104,7 +104,7 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #101a2400;
     height: 80px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -112,10 +112,13 @@ header {
     top: 100%; /* Placez le sous-menu en dessous de l'élément parent */
 }
 
+.dropdown-content :hover {
+    background-color: #0056b3;
+}
 /* Style pour les éléments du sous-menu au survol */
 .dropdown-content a:hover {
     background-color: #ddd;
-    color: black;
+    color: rgba(0, 0, 0, 0);
 }
 
 /* Afficher le sous-menu au survol */
@@ -277,38 +280,55 @@ footer {
     color: #0056b3; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
 }
- #listmodelR1 a {/* Vos styles CSS spécifiques ici */
+ .listmodelR1 a {/* Vos styles CSS spécifiques ici */
  text-decoration: none; /* Supprime la décoration du lien (soulignement par défaut) */
- color: #007bff; /* Couleur du texte au repos */
+ color: #f0f0f0; /* Couleur du texte au repos */
  transition: color 0.3s ease; /* Transition pour l'effet au survol */
 
  /* Ajoutez d'autres styles personnalisés si nécessaire */
 }
-#listemodelR1 a:hover {
-    color: #0056b3; /* Couleur du texte au survol */
+.listemodelR1 a:hover {
+    color: #ffffff; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
 }
 
-#listmodelR2 a {/* Vos styles CSS spécifiques ici */
+.listmodelR2 a {/* Vos styles CSS spécifiques ici */
     text-decoration: none; /* Supprime la décoration du lien (soulignement par défaut) */
-    color: #007bff; /* Couleur du texte au repos */
+    color: #fefefe; /* Couleur du texte au repos */
     transition: color 0.3s ease; /* Transition pour l'effet au survol */
    
     /* Ajoutez d'autres styles personnalisés si nécessaire */
    }
-   #listemodelR2 a:hover {
+   .listemodelR2 a:hover {
     color: #0056b3; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
 }
 
-   #listmodelFamille a {/* Vos styles CSS spécifiques ici */
+   .listmodelFamille a {/* Vos styles CSS spécifiques ici */
     text-decoration: none; /* Supprime la décoration du lien (soulignement par défaut) */
-    color: #007bff; /* Couleur du texte au repos */
+    color: #ffffff; /* Couleur du texte au repos */
     transition: color 0.3s ease; /* Transition pour l'effet au survol */
    
     /* Ajoutez d'autres styles personnalisés si nécessaire */
    }
-   #listemodelFamille a:hover {
+   .listemodelFamille a:hover {
     color: #0056b3; /* Couleur du texte au survol */
     /* Ajoutez d'autres styles au survol si nécessaire */
 }
+.btnlistmodelR1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btnlistmodelR1:hover {
+    background-color: #2980b9; /* Couleur de fond au survol */
+  }
+  
