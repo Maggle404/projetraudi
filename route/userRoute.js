@@ -2,17 +2,20 @@ const express=require("express")
 
 const Route=express.Router()
 const userController=require("../controller/userController.js")
+const carsController=require("../controller/carsController.js")
 const checkAdmin = require("../controller/userController.js")
 
 
-Route.get('/listUser', checkAdmin, userController.getUsers)
-Route.post('/createUser', checkAdmin, userController.create)
-Route.put('/editUser/:id', checkAdmin, userController.getUsers)
-Route.delete('/deleteUser/:id', checkAdmin, userController.delete)
+//read
+Route.get('/listUser', checkAdmin.checkAdmin, userController.getUser)
+//Create, update, delete
+Route.post('/createUser', checkAdmin.checkAdmin, userController.createUser)
+Route.put('/editUser/:id', checkAdmin.checkAdmin, userController.editUser)
+Route.delete('/deleteUser/:id', checkAdmin.checkAdmin, userController.deleteUser)
 
 
-Route.get('/admin', userController.getCars)
-Route.get('/compta', User.CreateTableUser)
+Route.get('/admin', carsController.getCars)
+//Route.get('/compta', userController.get)
 
 
 

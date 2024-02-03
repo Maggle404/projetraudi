@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Comptables</title>
+    <link rel="stylesheet" href="comptable.css">
+</head>
+<body>
+    <h1>Espace Comptables</h1>
+
+    <!-- Historique des achats -->
+    <h2>Historique des Achats</h2>
+    <ul>
+        <% historiqueAchats.forEach((achat) => { %>
+            <li><%= achat.date %> - <%= achat.montant %> €</li>
+        <% }); %>
+    </ul>
+
+    <!-- Compte rendu du gain total par mois -->
+    <h2>Compte Rendu du Gain Total par Mois</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mois</th>
+                <th>Gain Total (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% gainTotalParMois.forEach((mois) => { %>
+                <tr>
+                    <td><%= mois.mois %></td>
+                    <td><%= mois.gain %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <section id="bilan">
+        <h2>Bilan</h2>
+        <!-- Ajoutez ici les détails du bilan comptable -->
+    </section>
+
+    <section id="comptes">
+        <h2>Comptes</h2>
+        <!-- Ajoutez ici la liste des comptes et leurs détails -->
+    </section>
+
+    <section id="rapports">
+        <h2>Rapports financiers</h2>
+        <!-- Ajoutez ici les rapports financiers et leurs détails -->
+    </section>
+</body>
+<footer>
+    <p>&copy; 2024 Raudi. Tous droits réservés.</p>
+</footer>
+</html>

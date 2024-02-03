@@ -3,7 +3,7 @@ const sequelize = require("../database/database")
 
 
 const options = sequelize.define("options", {
-    ID:{
+    id:{
         type: DataTypes.INTEGER, 
         primaryKey: true,
         autoIncrement: true
@@ -20,8 +20,6 @@ const options = sequelize.define("options", {
     freezeTableName: true
 })
 
-cars.belongsToMany(options, {through: "cars_models"})
-options.belongsToMany(cars, {through: "Product_ype"})
 
 
 options.sync({alter:true});
