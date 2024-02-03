@@ -1,6 +1,6 @@
 const DataTypes = require("sequelize")
 const sequelize = require("../database/database")
-const options = require("./optionsModel")
+const User = require("./userModel.js")
 
 sequelize.authenticate().then(()=>{
     console.log("login success");
@@ -34,9 +34,11 @@ const Car = sequelize.define("car", {
     freezeTableName: true
 })
 
-Car.belongsToMany(options, {through: "car_options"})
-options.belongsToMany(Car, {through: "car_options"})
 
+Car.belongsToMany(User, {through: "compta"})
+User.belongsToMany(Car, {through: "compta"})
+
+module.exports = Car
 
 const reload = async()=>{
     Car.sync({alter: true})

@@ -1,10 +1,52 @@
-const pool = require('../database/database.js')
-const bcrypt = require('bcrypt')
+const Car = require("../model/carsModel.js")
 const jwt = require('jsonwebtoken')
 require("dotenv").config()
 
+//---------------------------
+// Cette page sert a CRUD les voitures
+//---------------------------
 
 // MIDDLEWARES
+
+exports.login = async(req, res)=>{
+
+    const {name, password}=req.body
+    const conn = await pool.GetConnection()
+
+    const result = await conn.query('SELECT * from raudi where name = ?', [name])
+    if(result.length === 0){
+        return res.Status(400).json("User unknown")
+    }
+    
+    const passwordTrue = await bcrypt.compare(password, result[0].password)
+    console.log(passwordTrue);
+    if(!passwordTrue){
+        return res.status(400).json("INVALID PASSWRD")
+    }
+
+    const token = jwt.sign({name},  process.env.APIKEY, {expiresIn: '1H'})
+    res.json(token)
+}
+
+exports.auth = async(req, res, next)=>{
+    console.log(req.body.token);
+    const token = req.body.token ? req.body.token : req.headers.authorisation
+    if(token){
+        let decoded = jwt.verify(token, process.env.APIKEY)
+        console.log(decoded);
+        if (decoded){
+            next()
+        }
+        else{
+            return res.status(401).json("unauthorised")
+        }
+    }
+    else{
+        return res.status(401).json("unauthorised")
+    }
+}
+
+
 
 exports.checkAdmin = (req, res, next) => {
     if (req.user && req.user.role === 'admin') {
@@ -17,7 +59,7 @@ exports.checkAdmin = (req, res, next) => {
 // read
 exports.getCars = async (req, res) => {
     try {
-        const cars = await db.Car.findAll();
+        const cars = await Car.findAll();
         res.status(200).json(cars);
     } catch (error) {
         console.error(error);
@@ -29,7 +71,7 @@ exports.getCars = async (req, res) => {
 exports.createCar = async (req, res) => {
     try {
         const { name, motor, seats, price } = req.body;
-        const newCar = await db.Car.create({ name, motor, seats, price });
+        const newCar = await Car.create({ name, motor, seats, price });
         res.status(201).json(newCar);
     } catch (error) {
         console.error(error);
@@ -42,7 +84,7 @@ exports.updateCar = async (req, res) => {
     try {
         const { id } = req.params;
         const { name, motor, seats, price } = req.body;
-        const updatedCar = await db.Car.update({ name, motor, seats, price }, { where: { id } });
+        const updatedCar = await Car.update({ name, motor, seats, price }, { where: { id } });
         res.status(200).json(updatedCar);
     } catch (error) {
         console.error(error);
@@ -54,7 +96,7 @@ exports.updateCar = async (req, res) => {
 exports.deleteCar = async (req, res) => {
     try {
         const { id } = req.params;
-        await db.Car.destroy({ where: { id } });
+        await Car.destroy({ where: { id } });
         res.status(204).end();
     } catch (error) {
         console.error(error);
