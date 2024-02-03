@@ -49,3 +49,15 @@ tbody tr:nth-child(even) {
 }
 
 /* Ajoutez d'autres styles selon vos préférences */
+section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Style des titres de section */
+section h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
