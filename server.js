@@ -36,3 +36,20 @@ app.use('/inscription', inscription);
 app.listen(8000, ()=>{
     console.log("server open on 8000")
 })
+
+const express = require('express');
+const app = express();
+const port = 8000; // Vous pouvez choisir le port de votre choix
+
+// Middleware pour servir des fichiers statiques (CSS, images, etc.)
+app.use(express.static('public'));
+
+// Définition de la route pour servir la page HTML
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + 'C:\Users\ps3ka\Desktop\projetraudi\Front-end\Comptable.html');
+});
+
+// Écoute du serveur sur le port spécifié
+app.listen(port, () => {
+    console.log(`Le serveur est en cours d'exécution sur le port 8000`);
+});
