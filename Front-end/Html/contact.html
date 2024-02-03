@@ -4,7 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de Contact</title>
+    <link rel="stylesheet" href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Styles.css">
+    <style>
+        /* Style de base pour le formulaire */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        h3 {
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        /* Style pour le lien de redirection */
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        /* Style pour le lien de redirection au-dessus du formulaire */
+        #redirection-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        /* Style pour les erreurs ou messages de succès (facultatif) */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        </style>
 </head>
+<header><h1>Bienvenue chez Raudi</h1>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="logo">
+            <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
+                <li class="navbar-item">
+                    <div class="dropdown">
+                        <a class="navbar-link">Modèles</a>
+                        <div class="dropdown-content">
+                            <a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\TemplateModele.html">Raudi R1</a>
+                            <a href="#">Modèle 2</a>
+                            <a href="#">Modèle 3</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
+        
+                <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
+            </ul>
+        </div>
+        </header>
 <body>
     <h1>Contactez-nous</h1>
     <form action="/envoyer-message" method="post">
