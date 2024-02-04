@@ -343,3 +343,22 @@ footer {
     background-color: #2980b9; /* Couleur de fond au survol */
 }
 }
+/* Style du footer */
+footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte du footer */
+    padding: 20px; /* Espace intérieur du footer */
+    text-align: center; /* Centrez le texte du footer */
+}
+
+/* Style des liens dans le footer */
+footer a {
+    color: #fff; /* Couleur des liens */
+    text-decoration: none; /* Supprime la soulignement des liens */
+    margin: 0 10px; /* Marge autour des liens */
+}
+
+/* Style des liens au survol */
+footer a:hover {
+    text-decoration: underline; /* Soulignez les liens au survol */
+}

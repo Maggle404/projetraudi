@@ -1,0 +1,60 @@
+/* Style de la section de personnalisation */
+.personnalisation-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Style du menu déroulant */
+#option-type {
+    font-size: 16px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style de la liste des options */
+#option-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style des éléments de la liste des options */
+.option {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style des cases à cocher */
+.option-checkbox {
+    margin-right: 10px;
+}
+
+/* Style du bouton de calcul */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style du prix total initial */
+#initial-price {
+    font-weight: bold;
+}
+
+/* Style du prix total */
+#total-price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+h2 {
+    text-align: center;
+}
