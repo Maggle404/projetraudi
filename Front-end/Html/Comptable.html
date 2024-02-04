@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="comptable.css">
     <style>
     </style>
+    <script>function openPopup(modelId) {
+        const popup = document.getElementById(`popupR1`);
+        popup.style.display = 'block';
+    }
+    
+    function closePopup(modelId) {
+        const popup = document.getElementById(`popupR1`);
+        popup.style.display = 'none';
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -16,20 +26,20 @@
                 <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="logo">
                 <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
                 <ul class="navbar-menu">
-                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
+                    <li class="navbar-item"><a href="structure.HTML" class="navbar-link">Accueil</a></li>
                     <li class="navbar-item">
                         <div class="dropdown">
                             <a class="navbar-link">Modèles</a>
                             <div class="dropdown-content">
-                                <button onclick="window.location.href='C:/Users/ps3ka/Desktop/projetraudi/Front-end/Html/modele.html'" class="btnlistmodelR1">Raudi R1</button>
-                                <button onclick="window.location.href='C:/Users/ps3ka/Desktop/projetraudi/Front-end/Html/modeleR2.html'" class="btnlistmodelR1">Raudi R2</button>
-                                <button onclick="window.location.href='C:/Users/ps3ka/Desktop/projetraudi/Front-end/Html/modeleFamille.html'" class="btnlistmodelR1">Raudi Famille</button>
+                                <button onclick="window.location.href='../projetraudi/Front-end/Html/modele.html'" class="btnlistmodelR1">Raudi R1</button>
+                                <button onclick="window.location.href='../projetraudi/Front-end/Html/modeleR2.html'" class="btnlistmodelR1">Raudi R2</button>
+                                <button onclick="window.location.href='../projetraudi/Front-end/Html/modeleFamille.html'" class="btnlistmodelR1">Raudi Famille</button>
                             </div>
                         </div>
                     </li>
-                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
+                    <li class="navbar-item"><a href="Connexion.html" class="navbar-link">Connexion</a></li>
             
-                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
+                    <li class="navbar-item"><a href="contact.html" class="navbar-link">Contact</a></li>
                 </ul>
             </div>
     </header>

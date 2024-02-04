@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modèles de Voitures - Raudi</title>
-    <link rel="stylesheet" href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Styles.css">
+    <link rel="stylesheet" href="Styles.css">
 
     <style>
         body { font-family: Arial, sans-serif; background: #f7f7f7; }
@@ -13,6 +13,16 @@
         .model img { width: 100%; height: auto; border-radius: 5px; }
         .model h3 { margin-top: 10px; }
     </style>
+    <script>function openPopup(modelId) {
+        const popup = document.getElementById(`popupR1`);
+        popup.style.display = 'block';
+    }
+    
+    function closePopup(modelId) {
+        const popup = document.getElementById(`popupR1`);
+        popup.style.display = 'none';
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -22,20 +32,20 @@
                 <img src="C:\Users\ps3ka\Downloads\H.png" alt="Raudi logo" class="logo">
                 <a href="C:\Users\ps3ka\Downloads\H.png" class="navbar-logo">Raudi</a>
                 <ul class="navbar-menu">
-                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
+                    <li class="navbar-item"><a href="..\projetraudi\Front-end\structure.HTML" class="navbar-link">Accueil</a></li>
                     <li class="navbar-item">
                         <div class="dropdown">
                             <a class="navbar-link">Modèles</a>
                             <div class="dropdown-content">
-                                <button onclick="window.location.href='C:/Users/ps3ka/Desktop/projetraudi/Front-end/Html/modele.html'" class="btnlistmodelR1">Raudi R1</button>
-                                <button onclick="window.location.href='C:/Users/ps3ka/Desktop/projetraudi/Front-end/Html/modeleR2.html'" class="btnlistmodelR1">Raudi R2</button>
-                                <button onclick="window.location.href='C:/Users/ps3ka/Desktop/projetraudi/Front-end/Html/modeleFamille.html'" class="btnlistmodelR1">Raudi Famille</button>
+                                <button onclick="window.location.href='../projetraudi/Front-end/Html/modele.html'" class="btnlistmodelR1">Raudi R1</button>
+                                <button onclick="window.location.href='../projetraudi/Front-end/Html/modeleR2.html'" class="btnlistmodelR1">Raudi R2</button>
+                                <button onclick="window.location.href='../projetraudi/Front-end/Html/modeleFamille.html'" class="btnlistmodelR1">Raudi Famille</button>
                             </div>
                         </div>
                     </li>
-                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
+                    <li class="navbar-item"><a href="..\projetraudi\Front-end\Html\Connexion.html" class="navbar-link">Connexion</a></li>
             
-                    <li class="navbar-item"><a href="C:\Users\ps3ka\Desktop\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
+                    <li class="navbar-item"><a href="..\projetraudi\Front-end\Html\contact.html" class="navbar-link">Contact</a></li>
                 </ul>
             </div>
             
