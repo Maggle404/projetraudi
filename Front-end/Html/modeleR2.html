@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modèles de Voitures - Raudi</title>
     <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="personalisation.css">
 
     <style>
         body { font-family: Arial, sans-serif; background: #f7f7f7; }
@@ -63,6 +64,135 @@
 
         <!-- Répétez les divs .model pour chaque modèle de voiture -->
     </div>
+    <div class="personnalisation-section">
+        <h2>Personnalisation du véhicule</h2>
+
+        <!-- Menu déroulant pour les types d'options -->
+        <label for="option-type">Sélectionnez le type d'option :</label>
+        <select id="option-type">
+            <option value="interieur">Intérieur</option>
+            <option value="volant">Volant</option>
+            <option value="roue">Roue</option>
+            <option value="carrosserie">Carrosserie</option>
+        </select>
+
+        <!-- Liste des options -->
+        <ul id="option-list">
+            <!-- Options d'intérieur -->
+            <li class="option interieur">
+                <label>
+                    <input type="checkbox" id="option1" class="option-checkbox" data-price="300">
+                    Sièges en cuir (+300 €)
+                </label>
+            </li>
+            <li class="option interieur">
+                <label>
+                    <input type="checkbox" id="option2" class="option-checkbox" data-price="150">
+                    Système audio premium (+150 €)
+                </label>
+            </li>
+
+            <!-- Options de volant -->
+            <li class="option volant">
+                <label>
+                    <input type="checkbox" id="option3" class="option-checkbox" data-price="50">
+                    Volant en cuir (+50 €)
+                </label>
+            </li>
+            <li class="option volant">
+                <label>
+                    <input type="checkbox" id="option4" class="option-checkbox" data-price="80">
+                    Volant chauffant (+80 €)
+                </label>
+            </li>
+
+            <!-- Options de roue -->
+            <li class="option roue">
+                <label>
+                    <input type="checkbox" id="option5" class="option-checkbox" data-price="200">
+                    Jantes en alliage (+200 €)
+                </label>
+            </li>
+            <li class="option roue">
+                <label>
+                    <input type="checkbox" id="option6" class="option-checkbox" data-price="120">
+                    Pneus tout-terrain (+120 €)
+                </label>
+            </li>
+
+            <!-- Options de carrosserie -->
+            <li class="option carrosserie">
+                <label>
+                    <input type="checkbox" id="option7" class="option-checkbox" data-price="350">
+                    Peinture métallisée (+350 €)
+                </label>
+            </li>
+            <li class="option carrosserie">
+                <label>
+                    <input type="checkbox" id="option8" class="option-checkbox" data-price="100">
+                    Spoiler arrière (+100 €)
+                </label>
+            </li>
+        </ul>
+
+        <!-- Prix total initial -->
+        <p>Prix initial du véhicule : <span id="initial-price">20,000 €</span></p>
+
+        <!-- Prix total -->
+        <div id="total-price">
+            <p>Prix total du véhicule : <span id="price-value">20,000 €</span></p>
+        </div>
+
+        <!-- Bouton pour calculer le prix -->
+        <button onclick="calculatePrice()">Calculer le prix</button>
+    </div>
+</div>
+
+<script>
+    // Fonction pour calculer le prix en fonction des options sélectionnées
+    function calculatePrice() {
+        // Obtenez la liste des cases à cocher d'option
+        const optionCheckboxes = document.querySelectorAll('.option-checkbox');
+        
+        // Obtenez le prix initial du véhicule
+        const initialPrice = 20000; // Prix initial en euros
+
+        // Initialisez le prix total au prix initial
+        let totalPrice = initialPrice;
+
+        // Parcourez les cases à cocher et ajoutez le prix de chaque option sélectionnée
+        optionCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                // Obtenez le prix de l'option à partir de l'attribut "data-price"
+                const optionPrice = parseFloat(checkbox.getAttribute('data-price'));
+                totalPrice += optionPrice;
+            }
+        });
+
+        // Mettez à jour le prix total affiché
+        document.getElementById('price-value').textContent = totalPrice.toFixed(2) + ' €';
+    }
+
+    // Fonction pour afficher les options en fonction du type sélectionné
+    document.getElementById('option-type').addEventListener('change', function() {
+        const selectedType = this.value;
+        const optionItems = document.querySelectorAll('.option');
+        
+        // Masquez toutes les options
+        optionItems.forEach(item => {
+            item.style.display = 'none';
+        });
+
+        // Affichez uniquement les options du type sélectionné
+        const selectedOptions = document.querySelectorAll(`.option.${selectedType}`);
+        selectedOptions.forEach(option => {
+            option.style.display = 'block';
+        });
+    });
+
+    // Appel initial pour afficher les options du type par défaut
+    document.getElementById('option-type').dispatchEvent(new Event('change'));
+</script>
 </body>
 <footer>
     <p>&copy; 2024 Raudi. Tous droits réservés.</p>
