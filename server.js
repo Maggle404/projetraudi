@@ -11,6 +11,8 @@ app.use (express.json())
 // API Routes:
 app.use('/cars', carsRoute)
 app.use('/admin', userRoute)
+app.use('/test', userRoute)
+
 
 
 //server
